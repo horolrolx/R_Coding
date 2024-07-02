@@ -75,6 +75,7 @@ if(score > 90){
 print(grade)
 
 # BMI 계산기
+
 # 1. 입력부
 height <- 170
 weight <- 72.3
@@ -152,3 +153,59 @@ while(i <= 100){
   i <- i + 1
 }
 print(sum)
+
+# 함수 만들기 !
+# 함수명 <- function(매개변수) {
+#   실행할 명령문
+#   return(함수 실행결과)
+# }
+
+# 2개의 값을 넣으면 큰 값을 찾아주는 함수
+find_max <- function(a, b){
+  num_max <- a
+  if(b > a){
+    num_max <- b
+  }
+  return(num_max)
+}
+
+find_max(95, 50)
+
+# BMI 계산기
+calc_bmi <- function(height, weight){
+  # BMI 계산
+  bmi <- round(weight / (height^2) * 10000, 2)
+  grade <- ""
+  # 체중 등급 찾기
+  if(bmi >= 30){
+    grade <- "고도비만"
+  } else if(bmi >= 25){
+    grade <- "비만"
+  } else if(bmi >= 23){
+    grade <- "과체중"
+  } else if(bmi >= 18.5){
+    grade <- "정상"
+  } else {
+    grade <- "저체중"
+  }
+  # 출력부
+  cat("나의 신체질량지수(BMI) :", bmi, grade)
+}
+
+calc_bmi(170, 72)
+
+# 별 찍기
+for (i in 1:5){
+  for(j in 1:i){
+    cat("*")
+  }
+  cat("\n")
+}
+
+# 역으로 별 찍기
+for (i in 5:1){
+  for(j in i:1){
+    cat("*")
+  }
+  cat("\n")
+}
