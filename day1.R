@@ -110,7 +110,23 @@ cat("나의 신체질량지수(BMI) :", bmi, grade)
 #     반복할 명령문
 # }
 
+# 구구단 2단 출력
 for(i in 1:9){
 # cat(2,"x",i,"=",2*i,"\n")
   cat("2 x",i,"=", 2*i,"\n")
 }
+
+# 중첩 for문
+for(i in 1:9){
+  cat("---",i,"단 ---\n")
+  for(j in 1:9){
+    cat(i, "x", j, "=", i*j, "\n")
+  }
+}
+
+# 1 ~ 100까지의 합
+sum <- 0
+for(i in 1:100){
+  sum <- sum + i
+}
+print(sum)
