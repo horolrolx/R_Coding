@@ -36,3 +36,40 @@ city <- c("Seoul", "Tokyo")
 rank <- c(1, 2)
 city.info <- data.frame(city, rank)
 city.info
+
+# 조건문, 반복문, 함수
+# if~else if~else
+# 기본문법
+# if(조건) {
+#   실행문
+# } else if(조건) {
+#   실행문
+# } else if(조건) {
+#   실행문
+# } else {
+#   실행문
+# }
+
+# 성적을 반환하는 코드 작성
+#   91 ~ 100 : A
+#   81 ~ 90 : B
+#   71 ~ 80 : C
+#   61 ~ 70 : D
+#   0 ~ 60 : F
+# 예시 : grade <- "A"
+score <- 91
+# 조건문으로 score에 맞는 grade 출력
+# 출력예 : print(grade)
+
+if(score > 90){
+  grade <- "A"
+} else if(score > 80){
+  grade <- "B"
+} else if(score > 70){
+  grade <- "C"
+} else if(score > 60){
+  grade <- "D"
+} else {
+  grade <- "F"
+}
+print(grade)
