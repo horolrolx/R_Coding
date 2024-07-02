@@ -130,3 +130,25 @@ for(i in 1:100){
   sum <- sum + i
 }
 print(sum)
+
+# while(반복문)
+# while 기본문법
+# while(조건) {
+#  반복해서 실행
+# }
+# while문에 break 함께 사용할 것 !
+#   - for문은 반복횟수가 정해져있기 때문에
+#     언제가 종료가 됨 !
+#   - while 반복횟수가 없음(무한루프)
+#   * break(반복을 빠져 나오세요)
+#   * continue(다음 반복으로 넘기기)
+#     ㄴ R에서는 next사용
+
+# 1 ~ 100 더하기 (while)
+sum <- 0
+i <- 1
+while(i <= 100){
+  sum <- sum + i
+  i <- i + 1
+}
+print(sum)
