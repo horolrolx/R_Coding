@@ -26,3 +26,13 @@ data.frame() # 2차원
 #   * NA(결측치) : 값이 누락 된 것 !
 #   * NaN(수학적으로 저으이가 불가능한 값)
 #   * NULL(정의되어 있지 않음을 의미)
+
+# 분석할 때 가장 많이 사용하는 데이터 포맷은
+# → CSV, excel, JSON : 2차원
+# → 데이터분석시 가장 많이 사용하는 건
+#   ' 데이터 프레임 '
+
+city <- c("Seoul", "Tokyo")
+rank <- c(1, 2)
+city.info <- data.frame(city, rank)
+city.info
