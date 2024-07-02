@@ -73,3 +73,30 @@ if(score > 90){
   grade <- "F"
 }
 print(grade)
+
+# BMI 계산기
+# 1. 입력부
+height <- 170
+weight <- 72.3
+
+# 2. BMI 계산
+bmi <- round(weight / (height^2) * 10000, 2)
+
+grade <- ""
+# 3. 체중 등급 찾기
+if(bmi >= 30){
+  grade <- "고도비만"
+} else if(bmi >= 25){
+  grade <- "비만"
+} else if(bmi >= 23){
+  grade <- "과체중"
+} else if(bmi >= 18.5){
+  grade <- "정상"
+} else {
+  grade <- "저체중"
+}
+
+# 4. 출력부
+#   - print() : 1건 출력
+#   - cat() : 여러건 출력
+cat("나의 신체질량지수(BMI) :", bmi, grade)
