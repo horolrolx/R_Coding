@@ -29,3 +29,7 @@ names(ds) <- colors
 ds
 
 pie(ds, main = "colors", col = colors)
+
+
+# 연속형 자료의 탐색
+#   - 대표값 : 평균, 편차
