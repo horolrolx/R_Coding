@@ -32,4 +32,21 @@ pie(ds, main = "colors", col = colors)
 
 
 # 연속형 자료의 탐색
-#   - 대표값 : 평균, 편차
+#   - 대표값 : 평균, 중앙값, 최빈값
+# 결측치 : 값이 없음(누락)
+# 이상치 : 값이 있음
+#             ㄴ 극단적인 값(평균에서 많이 떨어진 값)
+#             ㄴ 오류 ! (남 : 1, 여 : 2, 5 ?)
+
+weight <- c(62, 82, 79, 92, 74, 73)
+
+mean(weight)
+median(weight)
+
+# 사분위수 !
+mydata <- c(62, 82, 79, 92, 74, 73, 120)
+quantile(mydata)
+
+# 10% 단위로 구간을 나누어 계산
+quantile(mydata, (0:10)/10)
+summary(mydata)
