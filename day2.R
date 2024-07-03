@@ -74,3 +74,32 @@ hist(dist,
 
 # 막대 그래프 막대끼리 안붙어있음
 # 막대 그래프 막대의 범위가 의미 없음
+
+# 상자그림(boxplot)
+# - 사분위수를 보기 위함
+# - 이상치 확인 가능 !
+# - 상자그림의 가운데선 중앙값
+
+dist <- cars[, 2]
+boxplot(dist, main = "제동거리", family = "AppleGothic") # boxplot에서 하얀색 원이 이상치
+
+# 다중변수 자료의 탐색
+#   1. 산점도
+#     - 자동차의 무게와 연비의 관계 (음의 상관관계)
+wt <- mtcars$wt
+mpg <- mtcars$mpg
+plot(wt,
+     mpg,
+     main = "무게-연비 그래프",
+     xlab="무게",
+     ylab="연비",
+     col = "red",
+     pch = 11,
+     family="AppleGothic")
+
+vars <- c("mpg", "disp", "drat", "wt")
+target <- mtcars[,vars]
+head(target)
+
+pairs(target,
+      main = "multi plots")
