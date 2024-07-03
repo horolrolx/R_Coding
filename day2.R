@@ -50,3 +50,27 @@ quantile(mydata)
 # 10% 단위로 구간을 나누어 계산
 quantile(mydata, (0:10)/10)
 summary(mydata)
+
+# 산포
+mydata <- c(62, 82, 79, 92, 74, 73, 120)
+var(mydata) # 분산
+sd(mydata) # 표준편차
+range(mydata) # 값의 범위
+
+# 히스토그램
+# - 막대그래프 비슷함 (빈도수)
+# - 연속형 데이터 그리기 ! (종류별로 그리기 가능))
+dist <- cars[, 2]
+dist
+
+hist(dist,
+     main = "제동거리",
+     xlab = "제동거리",
+     ylab = "빈도수",
+     border = "blue", 
+     col = "green",
+     flas = 2,
+     breaks = 5, family="AppleGothic")
+
+# 막대 그래프 막대끼리 안붙어있음
+# 막대 그래프 막대의 범위가 의미 없음
