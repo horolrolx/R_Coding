@@ -1,5 +1,7 @@
 # 탐색적 데이터 분석 (EDA)
-season <- c("winter", "summer", "winter", "fall", "summer", "spring", "spring", "fall", "winter", "summer", "summer")
+season <- c("winter", "summer", "winter","fall",
+            "summer", "spring", "spring", "fall",
+            "winter", "summer", "summer")
 season
 
 # 도수분포표 만들기
@@ -81,7 +83,9 @@ hist(dist,
 # - 상자그림의 가운데선 중앙값
 
 dist <- cars[, 2]
-boxplot(dist, main = "제동거리", family = "AppleGothic") # boxplot에서 하얀색 원이 이상치
+boxplot(dist,
+        main = "제동거리",
+        family = "AppleGothic") # boxplot에서 하얀색 원이 이상치
 
 # 다중변수 자료의 탐색
 #   1. 산점도
@@ -103,3 +107,62 @@ head(target)
 
 pairs(target,
       main = "multi plots")
+
+# 그룹 정보가 있는 두변수의 산점도
+iris.2 <- iris[, 3:4]
+point <- as.numeric(iris$Species)
+point
+
+color <- c("red", "green", "blue")
+plot(iris.2,
+     main = "Iris Plot",
+     pch = c(point),
+     col = color[point])
+
+# 상관분석
+#   - 2개의 특징의 상관정도를 파악
+#   - -1 ~ +1 사이의 값
+#   = +1과 -1에 가까울수록 상관 높음
+#   - 0에 가까울수록 상관 없음
+#   - +1은 양의 상관관계
+#   - -1은 음의 상관관계
+
+# 데이터분석
+#   상관분석 -> 회귀분석
+#   0.4 이하는 상관 없음
+#   0.4 ~ 0.7 : 약한 상관관계
+#   0.7 ~ 1.0 : 강한 상관관계
+
+# 인공지능
+#   차원(특징)의 저주 !
+#     - 특징이 너무 많으면 
+#       오히려 모델의 성능이 하락하는 현상
+#     - 해결책 : 특징의 갯수를 줄이기
+#         1. 특징 선택
+#           ㄴ 목적과 상관정도가 높은 특징만 선택 !
+#           ㄴ 특징값이 변하지 않음
+#         2. 특징 추출
+#           ㄴ 주성분 분석(PCA)
+#           ㄴ 딥러닝 활용(오토 인코더)
+
+# 히트맵(상관분석 그래프)
+cor(iris[,1:4])
+
+# 선그래프
+month = 1:12
+late = c(5, 8, 7, 9, 4, 6, 12, 13, 8, 6, 6, 4)
+late2 = c(4, 6, 5, 8, 7, 8, 10, 11, 6, 5, 7, 3)
+plot(month,
+     late,
+     main = "지각생 통계",
+     type = "l", # 그래프 종류(b, s, o, l)
+     lty = 1,    # 선 종류
+     lwd = 1,    # 선 굵기
+     xlab = "월",
+     ylab = "지각 빈도수",
+     family = "AppleGothic")
+
+lines(month,
+      late2,
+      type = "b",
+      col = "blue")
